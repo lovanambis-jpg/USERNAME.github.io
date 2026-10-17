@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "Ronasentra Rental Manager",
+  "short_name": "Ronasentra",
+  "description": "Kelola akun premium, pelanggan, dan rental secara lokal dan offline.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f4ec",
+  "theme_color": "#182638",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

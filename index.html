@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#182638" />
+    <meta name="description" content="Kelola akun premium, pelanggan, dan rental secara lokal dan offline." />
+    <title>Ronasentra — Rental Manager</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon-192.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/db.js" defer></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+        <a class="brand" href="#dashboard" aria-label="Ronasentra Dashboard">
+          <img src="/assets/ronasentra-logo.jpg" alt="Logo Ronasentra" />
+          <span><strong>RONASENTRA</strong><small>RENTAL MANAGER</small></span>
+        </a>
+        <div class="nav-caption">MENU UTAMA</div>
+        <nav class="nav-list">
+          <button class="nav-item active" data-view="dashboard"><span class="nav-icon">◈</span>Ringkasan</button>
+          <button class="nav-item" data-view="accounts"><span class="nav-icon">▣</span>Inventaris</button>
+          <button class="nav-item" data-view="rentals"><span class="nav-icon">↗</span>Rental</button>
+          <button class="nav-item" data-view="customers"><span class="nav-icon">♙</span>Pelanggan</button>
+          <button class="nav-item" data-view="reports"><span class="nav-icon">▤</span>Laporan</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="local-card"><span class="local-dot"></span><div><strong>Data lokal</strong><small>Tersimpan di perangkat ini</small></div></div>
+          <button class="nav-item settings-link" data-view="settings"><span class="nav-icon">⚙</span>Cadangan & pengaturan</button>
+          <div class="sidebar-foot">RONASENTRA.ID <span>•</span> v1.0</div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Buka menu">☰</button>
+          <div class="page-heading"><div class="eyebrow" id="page-eyebrow">RUANG KENDALI</div><h1 id="page-title">Ringkasan</h1></div>
+          <div class="topbar-actions">
+            <div class="connection-pill" id="connection-pill"><span class="status-dot"></span><span id="connection-label">Mode lokal</span></div>
+            <button class="top-avatar" data-action="go-settings" aria-label="Buka cadangan"><img src="/assets/ronasentra-logo.jpg" alt="" /></button>
+          </div>
+        </header>
+        <div class="notice-bar" id="storage-notice"><span class="notice-icon">i</span><span><strong>Offline-first:</strong> data hanya tersimpan di perangkat ini. Untuk memindahkan ke perangkat lain, gunakan cadangan manual.</span><button class="notice-close" aria-label="Tutup pemberitahuan" data-action="dismiss-notice">×</button></div>
+        <section class="content" id="content" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Navigasi bawah">
+      <button class="mobile-nav-item active" data-view="dashboard"><span>◈</span><small>Beranda</small></button>
+      <button class="mobile-nav-item" data-view="accounts"><span>▣</span><small>Akun</small></button>
+      <button class="mobile-nav-item mobile-add" data-action="new-rental" aria-label="Buat rental"><span>＋</span></button>
+      <button class="mobile-nav-item" data-view="rentals"><span>↗</span><small>Rental</small></button>
+      <button class="mobile-nav-item" data-view="settings"><span>•••</span><small>Lainnya</small></button>
+    </nav>
+
+    <dialog class="modal" id="modal" aria-labelledby="modal-title"><div class="modal-frame"><div class="modal-head"><div><div class="eyebrow">RONASENTRA</div><h2 id="modal-title">Detail</h2></div><button class="icon-button" data-action="close-modal" aria-label="Tutup">×</button></div><div class="modal-body" id="modal-body"></div></div></dialog>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
